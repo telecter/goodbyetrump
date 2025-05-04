@@ -32,3 +32,29 @@ hr.blue {
 a {
     color: #d9d9d9; 
 }
+#progress-bar {
+    position: relative;
+    width: 60%;
+    background-color: #1c1c1c;
+    border-radius: 5px;
+}
+#countdown-progress {
+    width: 10%;
+    height: 5vh;
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2.5rem;
+}
+#progress-label {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+}
