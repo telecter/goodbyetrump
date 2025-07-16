@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"> 
-    <script src="./main.js" defer></script>
-    <title>Goodbye Trump!</title>
-  </head>
-  <body>
-    <header class="text-center">
-      <h1>Goodbye Trump!</h1>
-      <p>
-        While we have lost this election, <strong>we must not despair!</strong>
-        <br />
-        Check the countdown down below to see when we'll be rid of him.
-      </p>
-    </header>
-    <hr class="red" />
-    <main>
-      <p class="big-text" id="countdown-days"></p>  
-      <p class="half-big-text" id="countdown-weeks"></p>
-      <p class="quarter-big-text" id="countdown-hours"></p>
-      <div class="flex-center">
-        <div id="progress-bar">
-          <div id="countdown-progress"></div>
-          <div id="progress-label"></div>
-        </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>">
+  <script src="./main.js" defer></script>
+  <title>Goodbye Trump!</title>
+</head>
+
+<body data-theme="dark">
+  <header class="text-center">
+    <h1>👋 Goodbye Trump!</h1>
+    <p>
+      While we have lost this election, <strong>we must not despair!</strong>
+      <br>
+      Check the countdown down below to see when we'll be rid of him.
+    </p>
+  </header>
+  <hr class="red">
+  <main>
+    <p class="big-text" id="countdown-days"></p>
+    <p class="half-big-text" id="countdown-weeks"></p>
+    <p class="quarter-big-text" id="countdown-hours"></p>
+    <div class="flex-center">
+      <div id="progress-bar">
+        <div id="countdown-progress"></div>
+        <div id="progress-label"></div>
       </div>
-      <p>
-        <strong>until January 20th, 2029</strong>, when Trump's
-        final term will expire.
-      </p>
-    </main>
-    <hr class="blue" />
-    <footer>
-      <p><a href="https://telecter.xyz">telecter.xyz</a></p>
-    </footer>
-  </body>
+    </div>
+    <p>
+      <strong>until January 20th, 2029</strong>, when Trump's
+      final<sup><small>*</small></sup> term will expire.
+    </p>
+    <small>
+      *Hopefully.
+    </small>
+  </main>
+  <hr class="blue">
+  <footer>
+    <p><a href="https://telecter.xyz">telecter.xyz</a> &#x2022; <a href="#" id="color-scheme">🔅</a></p>
+  </footer>
+</body>
+
 </html>
