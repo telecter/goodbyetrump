@@ -1,0 +1,7 @@
+name = "goodbyetrump"
+compatibility_date = "2025-07-17"
+
+[assets]
+directory = "./src"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"
