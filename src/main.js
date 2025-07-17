@@ -6,7 +6,8 @@
  \____|\___/ \___/ \__,_|_.__/ \__, |\___|   |_||_|   \__,_|_| |_| |_| .__/(_)
                                |___/                                 |_|      
 
-https://github.com/telecter/goodbyetrump
+Copyright (c) 2025 telecter - https://github.com/telecter/goodbyetrump
+Licensed MIT, see LICENSE file.
 
 */
 
