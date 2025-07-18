@@ -10,10 +10,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    body {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
 #color-scheme {
@@ -75,7 +75,8 @@ body[data-theme="light"] a {
   border-radius: 5px;
 }
 #countdown-progress {
-  width: 10%;
+  width: 0%;
+  transition: width 1.5s ease-out;
   height: 5vh;
   background-color: #2e2e2e;
   border-radius: 5px;
@@ -102,4 +103,19 @@ body[data-theme="light"] #countdown-progress {
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
+}
+
+#hand {
+  animation: wave 0.8s 1;
+}
+
+#hand:hover {
+  animation: wave 0.8s infinite;
+  cursor: default;
+}
+
+@keyframes wave {
+  50% {
+    transform: rotate(30deg);
+  }
 }

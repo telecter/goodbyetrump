@@ -11,7 +11,7 @@ Licensed MIT, see LICENSE file.
 
 */
 
-"use strict";
+import { CountUp } from "https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.9.0/countUp.min.js";
 
 const schemeSelector = document.getElementById("color-scheme");
 
@@ -36,28 +36,49 @@ const countdownHours = document.getElementById("countdown-hours");
 const progress = document.getElementById("countdown-progress");
 const progressLabel = document.getElementById("progress-label");
 
-const endTime = new Date(2029, 0, 20, 12, 0, 0);
-const now = new Date();
-
-const diffTime = endTime - now;
-
-if (diffTime > 0) {
+function getDiffUnits(diffTime) {
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   const diffWeeks = Math.ceil(diffDays / 7);
   const diffHours = Math.round(diffTime / (1000 * 60 * 60));
-  const decimalComplete = 1 - diffDays / 1461;
-  const percentComplete = (decimalComplete * 100).toFixed(1);
-
-  countdownDays.textContent = `${diffDays} days`;
-  countdownWeeks.textContent = `${diffWeeks} weeks`;
-  countdownHours.textContent = `${diffHours} hours`;
-  progress.style.width = `${percentComplete}%`;
-  progressLabel.textContent = `${percentComplete}% complete`;
-} else {
-  countdownDays.textContent = "We made it!";
-  countdownWeeks.textContent = "🎉 Congratulations!";
-  countdownHours.textContent = "Is he leaving yet?";
-  progress.style.width = `100%`;
-  progress.style.backgroundColor = "green";
-  progressLabel.textContent = `100% complete!`;
+  return [diffWeeks, diffDays, diffHours];
 }
+
+function setCountdown(startTime, endTime) {
+  const now = new Date();
+  const [totalWeeks, totalDays, totalHours] = getDiffUnits(endTime - startTime);
+
+  if (endTime - now > 0) {
+    const [diffWeeks, diffDays, diffHours] = getDiffUnits(endTime - now);
+    const decimalComplete = 1 - diffDays / 1461;
+    const percentComplete = (decimalComplete * 100).toFixed(1);
+
+    new CountUp(countdownDays, diffDays, {
+      startVal: totalDays,
+      suffix: diffDays == 1 ? " day" : " days",
+    }).start();
+
+    new CountUp(countdownWeeks, diffWeeks, {
+      startVal: totalWeeks,
+      suffix: diffWeeks == 1 ? " week" : " weeks",
+    }).start();
+
+    new CountUp(countdownHours, diffHours, {
+      startVal: totalHours,
+      suffix: diffHours == 1 ? " hour" : " hours",
+    }).start();
+
+    progress.style.width = `${percentComplete}%`;
+    progressLabel.textContent = `${percentComplete}% complete`;
+  } else {
+    countdownDays.textContent = "We made it!";
+    countdownWeeks.textContent = "🎉 Congratulations!";
+    countdownHours.textContent = "Is he leaving yet?";
+    progress.style.width = `100%`;
+    progress.style.backgroundColor = "green";
+    progressLabel.textContent = `100% complete!`;
+  }
+}
+
+const startTime = new Date(2025, 0, 20, 12, 0, 0);
+const endTime = new Date(2029, 0, 20, 12, 0, 0);
+setCountdown(startTime, endTime);
