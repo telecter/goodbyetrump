@@ -55,20 +55,27 @@ function setCountdown(startTime, endTime) {
     new CountUp(countdownDays, diffDays, {
       startVal: totalDays,
       suffix: diffDays == 1 ? " day" : " days",
+      separator: "",
     }).start();
 
     new CountUp(countdownWeeks, diffWeeks, {
       startVal: totalWeeks,
       suffix: diffWeeks == 1 ? " week" : " weeks",
+      separator: "",
     }).start();
 
     new CountUp(countdownHours, diffHours, {
       startVal: totalHours,
       suffix: diffHours == 1 ? " hour" : " hours",
+      separator: "",
+    }).start();
+
+    new CountUp(progressLabel, percentComplete, {
+      suffix: "% complete",
+      decimalPlaces: 1,
     }).start();
 
     progress.style.width = `${percentComplete}%`;
-    progressLabel.textContent = `${percentComplete}% complete`;
   } else {
     countdownDays.textContent = "We made it!";
     countdownWeeks.textContent = "🎉 Congratulations!";
