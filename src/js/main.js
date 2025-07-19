@@ -17,7 +17,6 @@ const schemeSelector = document.getElementById("color-scheme");
 
 schemeSelector.addEventListener("click", () => {
   const theme = document.body.getAttribute("data-theme");
-  schemeSelector.textContent = theme == "dark" ? "🌙" : "🔅";
 
   const changed = theme == "dark" ? "light" : "dark";
   document.body.setAttribute("data-theme", changed);

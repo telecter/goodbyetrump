@@ -40,6 +40,16 @@ header {
   margin-bottom: 0.5rem;
 }
 
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
 @media screen and (max-width: 600px) {
   .big-text {
     font-size: 4.5rem;
@@ -67,7 +77,16 @@ body[data-theme="light"] a {
 }
 
 #color-scheme {
+  position: fixed;
+  right: 5px;
+  top: 5px;
   text-decoration: none;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
 #progress-bar {
@@ -108,10 +127,17 @@ body[data-theme="light"] #countdown-progress {
 
 #hand {
   animation: wave 0.8s 1;
+  display: inline-block;
 }
 #hand:hover {
   animation: wave 0.8s infinite;
   cursor: default;
+}
+
+@media screen and (max-width: 600px) {
+  #hand {
+    display: block;
+  }
 }
 
 @keyframes wave {
