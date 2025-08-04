@@ -60,6 +60,8 @@ function setCountdown(startTime, endTime) {
   const decimalComplete = 1 - diffDays / 1461;
   const percentComplete = (decimalComplete * 100).toFixed(1);
 
+  document.title += ` | ${diffDays} days left`;
+
   new CountUp(daysText, diffDays, {
     startVal: totalDays,
     separator: "",
@@ -67,6 +69,7 @@ function setCountdown(startTime, endTime) {
 
   new CountUp(monthsText, diffMonths, {
     startVal: totalMonths,
+    separator: "",
   }).start();
 
   new CountUp(weeksText, diffWeeks, {
